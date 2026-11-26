@@ -2,6 +2,35 @@
 
 Todos los cambios notables en **VoiceGen** se documentan en este archivo siguiendo [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] - 2026-11-25
+
+### Added
+- **Catálogo Renovado de Presets Loquendo (Clásicos YouTube y Modernos TikTok)**:
+  - **7 Presets Clásicos de la Época Dorada de YouTube**:
+    - *Jorge (Tutoriales & YTP)*: La voz por excelencia con realce sutil de medios para el timbre característico.
+    - *Carlos (Antagonista / GTA San Andreas)*: Timbre agresivo, velocidad incrementada y ganancia alta para tramas de misterio o peleas.
+    - *Diego (Che Boludo / Creepypastas)*: Acento argentino grave, velocidad pausada y atmósfera de misterio.
+    - *Esperanza (Telenovela / Denise)*: Tono agudo y melodramático clásico de las narraciones dramáticas y parodias.
+    - *Juan (Crítico & Sabio)*: Cadencia reflexiva con leve pitch grave para reseñas y debates.
+    - *Francisca (Rant Chileno / Furiosa)*: Ritmo veloz y pitch agudo para quejas y anécdotas enérgicas.
+    - *Carmen (Madre / Profesora Regañona)*: Voz madura española con tono elevado para regaños cómicos.
+  - **5 Presets Modernos de TikTok & Virales**:
+    - *Brainrot Subway Surfers*: Velocidad extrema (`+4.5`), pitch acelerado y ecualización cortante para vídeos de fondo con retención rápida.
+    - *Storytime Express*: Ritmo dinámico (`+2.0`) y compresión para relatos de Reddit y anécdotas virales.
+    - *Shitpost Micro Roto (Ear-Rape)*: Saturación analógica máxima, agudos y medios hiper-amplificados estilo meme caótico de TikTok/Reels.
+    - *Dark Iceberg & Teorías*: Velocidad lenta (`-2.5`), pitch grave (`-5`) y reverb de cueva densa para tops y teorías conspirativas.
+    - *NPC Live Speedup*: Efecto ardilla acelerada con tono infantilizado (`+7.0`) para directos de TikTok Live.
+  - **Selector de Categorías en PresetBar**: Pestañas de filtro animadas (*Todos*, *Clásicos YouTube*, *TikTok & Virales*, *Personalizados*) con etiquetas visuales del personaje/voz (`Jorge`, `Carlos`, `Diego`, etc.).
+
+### Changed
+- **Tipografía Universal Inter Incrustada**:
+  - Reemplazo global de tipografía en todos los elementos de la interfaz (`body`, `button`, `input`, `textarea`, `select`, selectores y tooltips) utilizando `@fontsource-variable/inter` directamente empaquetada en la aplicación, garantizando máxima legibilidad y estética limpia en Windows 11 sin depender de fuentes instaladas o internet.
+  - Preservación estricta de `JetBrains Mono` exclusivamente para etiquetas XML, códigos y visualizaciones numéricas de tiempo y frecuencia.
+
+### Fixed
+- **Contraste de Texto en el Instalador NSIS**:
+  - Corrección del bug de contraste en la página final del instalador NSIS (`hooks.nsh`) mediante `!define MUI_FORCECLASSICCONTROLS` y `!define MUI_TEXTCOLOR "FFFFFF"`, forzando la desvinculación de UxTheme sobre los checkboxes de "Ejecutar VoiceGen" y "Crear acceso directo en el escritorio" para que el texto se dibuje con contraste blanco nítido sobre el fondo oscuro `#09090B`.
+
 ## [0.1.0] - 2026-11-25
 
 ### Added

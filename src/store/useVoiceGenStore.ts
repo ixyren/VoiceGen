@@ -76,15 +76,15 @@ interface VoiceGenState {
 }
 
 const DEFAULT_SCRIPT =
-  'Hola a todos hijos de fruta, <silence msec="300"/> bienvenidos a VoiceGen, el estudio definitivo para voces Loquendo y SAPI 5.';
+  'Hola a todos amigos de YouTube, hoy les traigo un tutorial definitivo de cómo descargar el GTA San Andreas full español un link por Mega. \\item=Laugh';
 
 export const useVoiceGenStore = create<VoiceGenState>()(
   persist(
     (set, get) => ({
       selectedVoiceId: null,
       text: DEFAULT_SCRIPT,
-      rate: 1.5,
-      pitch: -2,
+      rate: 1,
+      pitch: 0,
       volume: 100,
       dsp: { ...BUILTIN_PRESETS[0].dsp },
       activePresetId: BUILTIN_PRESETS[0].id,
@@ -175,6 +175,8 @@ export const useVoiceGenStore = create<VoiceGenState>()(
           id: `custom-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
           name: name.trim(),
           description: description.trim() || "Preset personalizado de estudio",
+          category: "custom",
+          featuredVoiceLabel: selectedVoice ? selectedVoice.name : "Custom",
           isBuiltin: false,
           accentFrom,
           accentTo,
@@ -224,6 +226,8 @@ export const useVoiceGenStore = create<VoiceGenState>()(
           .map((p) => ({
             ...p,
             id: `custom-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+            category: "custom" as const,
+            featuredVoiceLabel: p.featuredVoiceLabel || (p.preferredVoices?.[0] ?? "Custom"),
             isBuiltin: false,
             accentFrom: p.accentFrom || "#8B5CF6",
             accentTo: p.accentTo || "#06B6D4",

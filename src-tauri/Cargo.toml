@@ -1,6 +1,6 @@
 [package]
 name = "voicegen"
-version = "0.1.0"
+version = "0.2.0"
 description = "VoiceGen — Estudio de generación de voz TTS para Loquendo, SAPI 5 y OneCore"
 authors = ["ixyren"]
 edition = "2021"

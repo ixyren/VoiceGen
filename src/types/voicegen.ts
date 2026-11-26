@@ -64,10 +64,14 @@ export interface ExportMp3Result {
 
 export type ExportBitrate = 128 | 192 | 320;
 
+export type PresetCategory = "all" | "classic" | "tiktok" | "custom";
+
 export interface Preset {
   id: string;
   name: string;
   description: string;
+  category: "classic" | "tiktok" | "custom";
+  featuredVoiceLabel: string;
   isBuiltin: boolean;
   accentFrom: string;
   accentTo: string;

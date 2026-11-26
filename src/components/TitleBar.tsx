@@ -63,7 +63,7 @@ export const TitleBar: React.FC = () => {
             VoiceGen
           </span>
           <span className="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/[0.05] text-cyan-400 border border-cyan-500/20">
-            Studio v0.1.0
+            Studio v0.2.0
           </span>
         </div>
       </div>

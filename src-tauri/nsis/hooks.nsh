@@ -1,7 +1,8 @@
 ; VoiceGen Dark Studio Glass NSIS Installer Theme & Hooks
 
+!define MUI_FORCECLASSICCONTROLS
 !define MUI_BGCOLOR "09090B"
-!define MUI_TEXTCOLOR "F4F4F5"
+!define MUI_TEXTCOLOR "FFFFFF"
 !define MUI_HEADERIMAGE_RIGHT
 !define MUI_INSTFILESPAGE_COLORS "22D3EE 09090B"
 !define MUI_CUSTOMFUNCTION_GUIINIT VoiceGenDarkGuiInit
@@ -21,7 +22,7 @@ FunctionEnd
 !macroend
 
 !macro NSIS_HOOK_POSTINSTALL
-  ; Garantiza acceso directo en el escritorio apuntando al binario real (voicegen.exe)
+  ; Garantiza acceso directo en el escritorio apuntando a voicegen.exe
   CreateShortCut "$DESKTOP\${PRODUCTNAME}.lnk" "$INSTDIR\${MAINBINARYNAME}.exe" "" "$INSTDIR\${MAINBINARYNAME}.exe" 0
 !macroend
 
